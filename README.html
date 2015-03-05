@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="imgs/buttondown.css" type="text/css" />
+</head>
+<body>
+<h1 id="cab302-software-development">CAB302 Software Development</h1>
+<h1 id="practical-3-automated-unit-testing">Practical 3: Automated Unit Testing</h1>
+<p>This week's practical exercises aim to get you familiar with designing and implementing automated unit tests using the JUnit plug-in to the Eclipse integrated development environment.</p>
+<hr />
+<h2 id="setting-up">Setting up</h2>
+<p>For this practical session, I would like you to get some practice in using external jars under eclipse. So at the start of the exercise, please go to the page:</p>
+<p><a href="https://github.com/junit-team/junit/wiki/Download-and-Install">https://github.com/junit-team/junit/wiki/Download-and-Install</a></p>
+<p>You will need <strong>both</strong> <code>junit.jar</code> and <code>hamcrest-core.jar</code>, so follow each link to a repository where you can find download packages of multiple different versions. You will need the 'jar' download of <a href="http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar">JUnit 4.11</a> and <a href="http://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar">Hamcrest Core 1.3</a>. Save these files somewhere convenient - you will be needing them for future practicals and assignments. You can also get the Javadocs jar to have a copy of the documentation, but you can view this online <a href="http://junit.sourceforge.net/javadoc/">here</a>.</p>
+<p>After you have imported this practical's project into Eclipse, you will need to add the downloaded jar files to the project. To do this:</p>
+<ol style="list-style-type: decimal">
+<li>Right click on the project <code>prac03-unittest</code> in the <code>Package Explorer</code> panel and click <code>Properties</code> at the bottom of the pop-up menu.</li>
+<li>Select the <code>Java Build Path</code> section of the project properties.</li>
+<li>Select the <code>Libraries</code> tab.</li>
+<li>Click the <code>Add External JARs</code> button and select your downloaded <code>junit-4.11.jar</code> and <code>hamcrest-core-1.3.jar</code> (either at the same time, or repeat the adding procedure).</li>
+</ol>
+<div class="figure">
+<img src="imgs/addexternal.png" title="Add External JARs" alt="Add External JARs" /><p class="caption">Add External JARs</p>
+</div>
+<p>If you have added the jar files correctly, you should see them in the <code>Package Explorer</code> as <code>Referenced Libraries</code>:</p>
+<div class="figure">
+<img src="imgs/referencedlibs.png" title="Referenced Libraries" alt="Referenced Libraries" /><p class="caption">Referenced Libraries</p>
+</div>
+<h2 id="practical-exercises">Practical Exercises</h2>
+<h3 id="group-exercise-1-test-case-brainstorming-totaliser-example">Group Exercise 1: Test case brainstorming (Totaliser example)</h3>
+<p>This exercise will give you practice at devising black-box test cases for a simple class.</p>
+<p>In the materials supplied for this practical session you will find API documentation for three classes, including one called <code>Totaliser</code>. (This documentation was generated from a correct version of the program.) Read the <a href="doc/TotaliserAPI/index.html">documentation for the <code>Totaliser</code></a> class and then, as a group, identify a small, but sufficient, set of test cases that will exercise the <code>Totaliser</code> implementation's functionality. Your tutor will write the test cases selected on the whiteboard.</p>
+<hr />
+<h3 id="individual-exercise-1-testing-with-junit-totaliser-example">Individual Exercise 1: Testing with JUnit (Totaliser example)</h3>
+<p>This exercise will give you practice at using JUnit to test a simple class.</p>
+<p>In the materials supplied for this practical session you will find an implementation of the <code>Totaliser</code> class in the <code>totaliserQuestion</code> package <strong><em>but do not edit or examine it!</em></strong> The purpose of the exercise is to test the supplied program as a black box, i.e., without looking at the source code.</p>
+<p>Create a new package called <code>totaliserAnswers</code> and inside that create a JUnit Test Class called <code>TotaliserTest.java</code>. In this class, implement the various tests identified in the previous exercise. Run your tests and see if you can identify any problems with the supplied program. NB: Eclipse will automatically recognise that your <code>TotaliserTest.java</code> file is a JUnit test class and will allow you to 'run' it as a JUnit test as soon as you have added a method with an <code>@Test</code> annotation to the file.</p>
+<p><strong>Hint:</strong> There are (at least) two errors in the code, one obvious and one a bit harder to detect.</p>
+<p>When you think your tests have identified the problems with the program examine the <code>Totaliser.java</code> source code file to confirm your suspicions. Then correct the errors in the code and rerun your tests to ensure that the problems have been fixed.</p>
+<hr />
+<h3 id="group-exercise-2-test-case-brainstorming-allsame-example">Group Exercise 2: Test case brainstorming (AllSame example)</h3>
+<p>This exercise will give you practice at devising black-box test cases for a more complicated, but stateless, class.</p>
+<p>Read the <a href="doc/AllSameAPI/index.html">API documentation for the <code>AllSame</code> class</a> and, as a group, identify a sufficient set of tests for it. Note that the method provided by this class is a pure function, i.e., it does not update any fields within the class and thus has no 'memory' from one invocation to the next, which simplifies testing.</p>
+<h3 id="individual-exercise-2-testing-with-junit-allsame-example">Individual Exercise 2: Testing with JUnit (AllSame example)</h3>
+<p>This exercise will give you practice at using JUnit to test a complicated, stateless class.</p>
+<p>In the materials supplied for this practical session you will find three different implementations of the <code>AllSame</code> class in the package <code>allSameQuestion</code>: <code>AllSameA.java</code>, <code>AllSameB.java</code> and <code>AllSameC.java</code> - <strong><em>again, do not look at the code for these yet</em></strong>. Develop a test class <code>AllSameTests.java</code> using the test cases identified in the previous exercise, your challenge is to identify which, if any, of these implementations is correct, and what the problems with the incorrect implementations are. Look at the code only when you have completed the exercise, in order to confirm your findings.</p>
+<p><strong>Hint:</strong> In the three implementations there are (at least) three distinct errors in total.</p>
+<p><strong>Note:</strong> Testing three different programs with one set of test cases is an unusual situation and is a little awkward, no matter how it's done. One approach is to, in your JUnit test class, manually edit which of the three programs is imported into the test class to change from one to the other. Another approach is to put each of the three programs in its own package and have a copy of the test case class in each one. (There is a much more elegant solution which works by creating a superclass for the three programs under test, but it is felt to be a little complex for this one-off exercise.)</p>
+<hr />
+<h3 id="group-exercise-3-test-case-brainstorming-journeyplanner-example">Group Exercise 3: Test case brainstorming (JourneyPlanner example)</h3>
+<p>This exercise will give you practice at devising black-box test cases for a complicated, stateful class.</p>
+<p>Read the <a href="doc/JourneyPlannerAPI/index.html">API documentation for the <code>JourneyPlanner</code> class</a> and, as a group, identify a sufficient set of tests for it. Note that this class updates private fields and thus retains a 'memory' from one method invocation to the next, making it hard to devise test cases with good 'coverage'.</p>
+<div class="figure">
+<img src="imgs/blocks.png" title="Manhattan distances example" alt="Manhattan distances example" /><p class="caption">Manhattan distances example</p>
+</div>
+<p><strong>Background:</strong> The class calculates journey times based on 'Manhattan distances', i.e., the distance you must travel in a grid-like environment by following the grid lines only (with no diagonal steps). The name derives from the exceptionally regular layout of streets in New York city, which forces people to travel in this way. Notice in the diagram above that the journey from point P1 to P2 is of the same length, no matter which route is taken.</p>
+<hr />
+<h3 id="individual-exercise-3-testing-with-junit-journeyplanner-example">Individual Exercise 3: Testing with JUnit (JourneyPlanner example)</h3>
+<p>This exercise will give you practice at using JUnit to test a complicated, stateful class.</p>
+<p>In the materials supplied for this practical session you will find two different implementations of the <code>JourneyPlanner</code> class in the <code>journeyPlannerQuestion</code> package: <code>JourneyPlannerA.java</code> and <code>JourneyPlannerB.java</code> - <strong><em>again, do not look at the code for these yet</em></strong>. Develop a test class <code>JourneyPlannerTests.java</code> using the test cases identified in the previous exercise, your challenge is to identify which, if any, of these implementations is correct, and what the problems are in the incorrect class or classes. Look at the code only when you have completed the tests, in order to confirm your findings.</p>
+<p><strong>Hint:</strong> In the two implementations there are (at least) two distinct errors in total.</p>
+</body>
+</html>
