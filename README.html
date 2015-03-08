@@ -14,9 +14,12 @@
 <p>This week's practical exercises aim to get you familiar with designing and implementing automated unit tests using the JUnit plug-in to the Eclipse integrated development environment.</p>
 <hr />
 <h2 id="setting-up">Setting up</h2>
-<p>For this practical session, I would like you to get some practice in using external jars under eclipse. So at the start of the exercise, please go to the page:</p>
-<p><a href="https://github.com/junit-team/junit/wiki/Download-and-Install">https://github.com/junit-team/junit/wiki/Download-and-Install</a></p>
-<p>You will need <strong>both</strong> <code>junit.jar</code> and <code>hamcrest-core.jar</code>, so follow each link to a repository where you can find download packages of multiple different versions. You will need the 'jar' download of <a href="http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar">JUnit 4.11</a> and <a href="http://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar">Hamcrest Core 1.3</a>. Save these files somewhere convenient - you will be needing them for future practicals and assignments. You can also get the Javadocs jar to have a copy of the documentation, but you can view this online <a href="http://junit.sourceforge.net/javadoc/">here</a>.</p>
+<p>When you import the project in the accompanying practical material into Eclipse, it should already have <strong>JUnit 4</strong> as a referenced library, using Eclipse's own copy of JUnit.</p>
+<div class="figure">
+<img src="imgs/junitlibinstalled.png" title="JUnit 4 found" alt="JUnit 4 found" /><p class="caption">JUnit 4 found</p>
+</div>
+<p><em>If the version of Eclipse on your computer does not have a copy of JUnit inbuilt, or there are problems with its version, follow the instructions in the remaining of this section.</em></p>
+<p>You will need <strong>both</strong> a <code>junit.jar</code> and <code>hamcrest-core.jar</code>, from <a href="https://github.com/junit-team/junit/wiki/Download-and-Install">this repository</a> where you can find download packages of multiple different versions. Specifically, you will need the 'jar' download of <a href="http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar">JUnit 4.11</a> and <a href="http://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar">Hamcrest Core 1.3</a>. Save these files somewhere convenient - you will need them for future practicals and assignments. You can also get the Javadocs jar to have a copy of the documentation, but you can view this online <a href="http://junit.sourceforge.net/javadoc/">here</a>.</p>
 <p>After you have imported this practical's project into Eclipse, you will need to add the downloaded jar files to the project. To do this:</p>
 <ol style="list-style-type: decimal">
 <li>Right click on the project <code>prac03-unittest</code> in the <code>Package Explorer</code> panel and click <code>Properties</code> at the bottom of the pop-up menu.</li>
@@ -38,7 +41,7 @@
 <hr />
 <h3 id="individual-exercise-1-testing-with-junit-totaliser-example">Individual Exercise 1: Testing with JUnit (Totaliser example)</h3>
 <p>This exercise will give you practice at using JUnit to test a simple class.</p>
-<p>In the materials supplied for this practical session you will find an implementation of the <code>Totaliser</code> class in the <code>totaliserQuestion</code> package <strong><em>but do not edit or examine it!</em></strong> The purpose of the exercise is to test the supplied program as a black box, i.e., without looking at the source code.</p>
+<p>In the materials supplied for this practical session you will find an implementation of the <code>Totaliser</code> class in the <code>totaliserQuestion</code> package <strong><em>but do not edit or examine it yet!</em></strong> The purpose of the exercise is to test the supplied program as a black box, i.e., without looking at the source code.</p>
 <p>Create a new package called <code>totaliserAnswers</code> and inside that create a JUnit Test Class called <code>TotaliserTest.java</code>. In this class, implement the various tests identified in the previous exercise. Run your tests and see if you can identify any problems with the supplied program. NB: Eclipse will automatically recognise that your <code>TotaliserTest.java</code> file is a JUnit test class and will allow you to 'run' it as a JUnit test as soon as you have added a method with an <code>@Test</code> annotation to the file.</p>
 <p><strong>Hint:</strong> There are (at least) two errors in the code, one obvious and one a bit harder to detect.</p>
 <p>When you think your tests have identified the problems with the program examine the <code>Totaliser.java</code> source code file to confirm your suspicions. Then correct the errors in the code and rerun your tests to ensure that the problems have been fixed.</p>

@@ -9,12 +9,14 @@ This week's practical exercises aim to get you familiar with designing and imple
 
 ## Setting up ##
 
-For this practical session, I would like you to get some practice in using external jars under eclipse. So at the start of the exercise, please go to the page:
+When you import the project in the accompanying practical material into Eclipse, it should already have **JUnit 4** as a referenced library, using Eclipse's own copy of JUnit.
 
-[https://github.com/junit-team/junit/wiki/Download-and-Install](https://github.com/junit-team/junit/wiki/Download-and-Install)
+![JUnit 4 found](imgs/junitlibinstalled.png "JUnit 4 found")
 
-You will need __both__ `junit.jar` and `hamcrest-core.jar`, so follow each link to a repository where you can find download packages of multiple different versions. You will need the 'jar' download of [JUnit 4.11](http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar) and [Hamcrest Core 1.3](http://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar).
-Save these files somewhere convenient - you will be needing them for future practicals and assignments.
+*If the version of Eclipse on your computer does not have a copy of JUnit inbuilt, or there are problems with its version, follow the instructions in the remaining of this section.*
+
+You will need __both__ a `junit.jar` and `hamcrest-core.jar`, from [this repository](https://github.com/junit-team/junit/wiki/Download-and-Install) where you can find download packages of multiple different versions. Specifically, you will need the 'jar' download of [JUnit 4.11](http://search.maven.org/remotecontent?filepath=junit/junit/4.11/junit-4.11.jar) and [Hamcrest Core 1.3](http://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar).
+Save these files somewhere convenient - you will need them for future practicals and assignments.
 You can also get the Javadocs jar to have a copy of the documentation, but you can view this online [here](http://junit.sourceforge.net/javadoc/).
 
 After you have imported this practical's project into Eclipse, you will need to add the downloaded jar files to the project. To do this:
@@ -44,7 +46,7 @@ In the materials supplied for this practical session you will find API documenta
 
 This exercise will give you practice at using JUnit to test a simple class.
 
-In the materials supplied for this practical session you will find an implementation of the `Totaliser` class in the `totaliserQuestion` package ***but do not edit or examine it!*** The purpose of the exercise is to test the supplied program as a black box, i.e., without looking at the source code.
+In the materials supplied for this practical session you will find an implementation of the `Totaliser` class in the `totaliserQuestion` package ***but do not edit or examine it yet!*** The purpose of the exercise is to test the supplied program as a black box, i.e., without looking at the source code.
 
 Create a new package called `totaliserAnswers` and inside that create a JUnit Test Class called `TotaliserTest.java`. In this class, implement the various tests identified in the previous exercise. Run your tests and see if you can identify any problems with the supplied program. NB: Eclipse will automatically recognise that your `TotaliserTest.java` file is a JUnit test class and will allow you to 'run' it as a JUnit test as soon as you have added a method with an `@Test` annotation to the file.
 
