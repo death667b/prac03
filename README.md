@@ -1,13 +1,13 @@
 CAB302 Software Development
 ===========================
 
-# Practical 3: Automated Unit Testing #
+# Practical 3: Automated Unit Testing
 
 This week's practical exercises aim to get you familiar with designing and implementing automated unit tests using the JUnit plug-in to the Eclipse integrated development environment.
 
 * * *
 
-## Setting up ##
+## Setting up
 
 When you import the project in the accompanying practical material into Eclipse, it should already have **JUnit 4** as a referenced library, using Eclipse's own copy of JUnit.
 
@@ -32,17 +32,17 @@ If you have added the jar files correctly, you should see them in the `Package E
 
 ![Referenced Libraries](imgs/referencedlibs.png "Referenced Libraries")
 
-## Practical Exercises ##
+## Practical Exercises
 
-### Group Exercise 1: Test case brainstorming (Totaliser example) ###
+### Group Exercise 1: Test case brainstorming (Totaliser example)
 
-This exercise will give you practice at devising black-box test cases for a simple class. 
+This exercise will give you practice at devising black-box test cases for a simple class.
 
 In the materials supplied for this practical session you will find API documentation for three classes, including one called `Totaliser`. (This documentation was generated from a correct version of the program.) Read the [documentation for the `Totaliser`](doc/TotaliserAPI/index.html) class and then, as a group, identify a small, but sufficient, set of test cases that will exercise the `Totaliser` implementation's functionality. Your tutor will write the test cases selected on the whiteboard.
 
 * * *
 
-### Individual Exercise 1: Testing with JUnit (Totaliser example) ###
+### Individual Exercise 1: Testing with JUnit (Totaliser example)
 
 This exercise will give you practice at using JUnit to test a simple class.
 
@@ -56,13 +56,13 @@ When you think your tests have identified the problems with the program examine 
 
 * * *
 
-### Group Exercise 2: Test case brainstorming (AllSame example) ###
+### Group Exercise 2: Test case brainstorming (AllSame example)
 
 This exercise will give you practice at devising black-box test cases for a more complicated, but stateless, class.
 
 Read the [API documentation for the `AllSame` class](doc/AllSameAPI/index.html) and, as a group, identify a sufficient set of tests for it. Note that the method provided by this class is a pure function, i.e., it does not update any fields within the class and thus has no 'memory' from one invocation to the next, which simplifies testing.
 
-### Individual Exercise 2: Testing with JUnit (AllSame example) ###
+### Individual Exercise 2: Testing with JUnit (AllSame example)
 
 This exercise will give you practice at using JUnit to test a complicated, stateless class.
 
@@ -75,7 +75,7 @@ implementations of the `AllSame` class in the package `allSameQuestion`: `AllSam
 
 * * *
 
-### Group Exercise 3: Test case brainstorming (JourneyPlanner example) ###
+### Group Exercise 3: Test case brainstorming (JourneyPlanner example)
 
 This exercise will give you practice at devising black-box test cases for a complicated, stateful class.
 
@@ -87,7 +87,7 @@ Read the [API documentation for the `JourneyPlanner` class](doc/JourneyPlannerAP
 
 * * *
 
-### Individual Exercise 3: Testing with JUnit (JourneyPlanner example) ###
+### Individual Exercise 3: Testing with JUnit (JourneyPlanner example)
 
 This exercise will give you practice at using JUnit to test a complicated, stateful class.
 
