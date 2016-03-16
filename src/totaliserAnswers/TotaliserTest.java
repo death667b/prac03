@@ -10,7 +10,7 @@ public class TotaliserTest {
 
 	@Test
 	public void test() {
-		//fail("Not yet implemented");
+
 		/*Cant do type double
 		 * int out of range
 		 * cant do string
@@ -20,8 +20,7 @@ public class TotaliserTest {
 		 */
 		
 		Totaliser myTest = new Totaliser();
-		int
-		boo = 5;
+		int	boo = 5;
 		myTest.enterValue(boo*-1);
 		myTest.enterValue(1);
 		myTest.getSum();
