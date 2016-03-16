@@ -2,30 +2,63 @@ package totaliserAnswers;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import totaliserQuestion.Totaliser;
 
 public class TotaliserTest {
 
+	private Totaliser tot;
+	private final int FIVE_NUMBER = 5;
+	private final int NEG_NUMBER = -5;
+	
+	@Before
+	public void setup() {
+		tot = new Totaliser();
+	}
+	
 	@Test
-	public void test() {
-
-		/*Cant do type double
-		 * int out of range
-		 * cant do string
-		 * console.log(myTest.getSum()); (console cannot beresolved)
-		 * erros on boolean
-		 * error on null, blank
-		 */
-		
-		Totaliser myTest = new Totaliser();
-		int	boo = 5;
-		myTest.enterValue(boo*-1);
-		myTest.enterValue(1);
-		myTest.getSum();
-		
-		
+	public void testAddNegOneToPosOne() {
+		tot.enterValue(1);
+		tot.enterValue(-1);
+		assertEquals(0, tot.getSum());
 	}
 
+	@Test
+	public void testAddOneToOne(){
+		tot.enterValue(1);
+		tot.enterValue(1);
+		assertEquals(2, tot.getSum());
+	}
+	
+	@Test
+	public void testFiftyFive(){
+		tot.enterValue(55);
+		assertEquals(55, tot.getSum());
+	}
+	
+	@Test
+	public void testReset(){
+		tot.enterValue(55);
+		tot.reset();
+		assertEquals(0, tot.getSum());
+	}
+	
+	@Test
+	public void testAddFiveNumbers(){
+		tot.enterValue(FIVE_NUMBER);
+		tot.enterValue(FIVE_NUMBER);
+		tot.enterValue(FIVE_NUMBER);
+		tot.enterValue(FIVE_NUMBER);
+		tot.enterValue(FIVE_NUMBER);
+		assertEquals(25, tot.getSum());
+	}
+	
+	@Test
+	public void testAddTwoNegNumbers(){
+		tot.enterValue(NEG_NUMBER);
+		tot.enterValue(NEG_NUMBER);
+		assertEquals(-10, tot.getSum());
+	}
 }
