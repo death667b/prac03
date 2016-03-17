@@ -2,7 +2,7 @@ package journeyPlannerAnswer;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
+//import org.junit.Before;
 import org.junit.Test;
 
 import journeyPlannerQuestion.JourneyPlannerA;
@@ -39,6 +39,22 @@ public class JourneyPlannerTests {
 	public void jpBTestZeroDistance() throws Exception {
 		jpB = new JourneyPlannerB(1);
 		assertEquals(0, jpB.journeyTime());
+	}
+	
+	@Test
+	public void jpATestTwentyDistance() throws Exception {
+		jpA = new JourneyPlannerA(1);
+		jpA.setOrigin(0, 0);
+		jpA.setDestination(10, 10);
+		assertEquals(20, jpA.journeyTime());
+	}
+
+	@Test
+	public void jpBTestTwentyDistance() throws Exception {
+		jpB = new JourneyPlannerB(1);
+		jpB.setOrigin(0, 0);
+		jpB.setDestination(10, 10);
+		assertEquals(20, jpB.journeyTime());
 	}
 	
 	@Test
