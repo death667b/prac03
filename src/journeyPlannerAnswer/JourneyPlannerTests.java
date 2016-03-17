@@ -44,7 +44,7 @@ public class JourneyPlannerTests {
 	@Test(expected=Exception.class)
 	public void jpATestNegitiveOriginForX() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpB.setOrigin(-1, 0);
+		jpA.setOrigin(-1, 0);
 	}
 
 	@Test(expected=Exception.class)
@@ -56,7 +56,7 @@ public class JourneyPlannerTests {
 	@Test(expected=Exception.class)
 	public void jpATestNegitiveOriginForY() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpB.setOrigin(0, -1);
+		jpA.setOrigin(0, -1);
 	}
 
 	@Test(expected=Exception.class)
@@ -68,7 +68,7 @@ public class JourneyPlannerTests {
 	@Test(expected=Exception.class)
 	public void jpATestNegitiveDestinationForX() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpB.setDestination(-1, 0);
+		jpA.setDestination(-1, 0);
 	}
 
 	@Test(expected=Exception.class)
@@ -80,7 +80,7 @@ public class JourneyPlannerTests {
 	@Test(expected=Exception.class)
 	public void jpATestNegitiveDestinationForY() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpB.setDestination(0, -1);
+		jpA.setDestination(0, -1);
 	}
 
 	@Test(expected=Exception.class)
@@ -109,3 +109,4 @@ public class JourneyPlannerTests {
 		jpB = new JourneyPlannerB(-1);
 	}
 }
+
