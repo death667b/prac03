@@ -41,52 +41,52 @@ public class JourneyPlannerTests {
 		assertEquals(0, jpB.journeyTime());
 	}
 	
-	@Test(expected=Exception.class)
+	@Test
 	public void jpATestNegitiveOriginForX() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpA.setOrigin(-1, 0);
+		assertFalse(jpA.setOrigin(-1, 0));
 	}
 
-	@Test(expected=Exception.class)
+	@Test
 	public void jpBTestNegitiveOriginForX() throws Exception {
 		jpB = new JourneyPlannerB(1);
-		jpB.setOrigin(-1, 0);
+		assertFalse(jpB.setOrigin(-1, 0));
 	}
 	
-	@Test(expected=Exception.class)
+	@Test
 	public void jpATestNegitiveOriginForY() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpA.setOrigin(0, -1);
+		assertFalse(jpA.setOrigin(0, -1));
 	}
 
-	@Test(expected=Exception.class)
+	@Test
 	public void jpBTestNegitiveOriginForY() throws Exception {
 		jpB = new JourneyPlannerB(1);
-		jpB.setOrigin(0, -1);
+		assertFalse(jpB.setOrigin(0, -1));
 	}
 	
-	@Test(expected=Exception.class)
+	@Test
 	public void jpATestNegitiveDestinationForX() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpA.setDestination(-1, 0);
+		assertFalse(jpA.setDestination(-1, 0));
 	}
 
-	@Test(expected=Exception.class)
+	@Test
 	public void jpBTestNegitiveDestinationForX() throws Exception {
 		jpB = new JourneyPlannerB(1);
-		jpB.setDestination(-1, 0);
+		assertFalse(jpB.setDestination(-1, 0));
 	}
 	
-	@Test(expected=Exception.class)
+	@Test
 	public void jpATestNegitiveDestinationForY() throws Exception {
 		jpA = new JourneyPlannerA(1);
-		jpA.setDestination(0, -1);
+		assertFalse(jpA.setDestination(0, -1));
 	}
 
-	@Test(expected=Exception.class)
+	@Test
 	public void jpBTestNegitiveDestinationForY() throws Exception {
 		jpB = new JourneyPlannerB(1);
-		jpB.setDestination(0, -1);
+		assertFalse(jpB.setDestination(0, -1));
 	}
 	
 	@Test(expected=Exception.class)
@@ -107,6 +107,30 @@ public class JourneyPlannerTests {
 	@Test(expected=Exception.class)
 	public void jpBTestNegitiveConstructor() throws Exception {
 		jpB = new JourneyPlannerB(-1);
+	}
+	
+	@Test
+	public void jpATestOutOfBoundsOriginForX() throws Exception {
+		jpA = new JourneyPlannerA(1);
+		assertFalse(jpA.setOrigin(11, 0));
+	}
+	
+	@Test
+	public void jpBTestOutOfBoundsOriginForX() throws Exception {
+		jpB = new JourneyPlannerB(1);
+		assertFalse(jpB.setOrigin(11, 0));
+	}
+	
+	@Test
+	public void jpATestOutOfBoundsOriginForY() throws Exception {
+		jpA = new JourneyPlannerA(1);
+		assertFalse(jpA.setOrigin(0, 11));
+	}
+	
+	@Test
+	public void jpBTestOutOfBoundsOriginForY() throws Exception {
+		jpB = new JourneyPlannerB(1);
+		assertFalse(jpB.setOrigin(0, 11));
 	}
 }
 
