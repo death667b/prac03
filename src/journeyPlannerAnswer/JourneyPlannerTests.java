@@ -8,7 +8,57 @@ import journeyPlannerQuestion.JourneyPlannerA;
 import journeyPlannerQuestion.JourneyPlannerB;
 
 public class JourneyPlannerTests {
+	
+	@Test
+	public void jpATestTenDistanceReverse() throws Exception {
+		JourneyPlannerA jpA = new JourneyPlannerA(1);
+		jpA.setOrigin(10, 5);
+		jpA.setDestination(0, 5);
+		assertEquals(10, jpA.journeyTime());
+	}
+
+	@Test
+	public void jpBTestTenDistanceReverse() throws Exception {
+		JourneyPlannerB jpB = new JourneyPlannerB(1);
+		jpB.setOrigin(10, 5);
+		jpB.setDestination(0, 5);
+		assertEquals(10, jpB.journeyTime());
+	}
+	
+	@Test
+	public void jpATestWalkingVerySlowMaxIntTwentySquare() throws Exception{
+		int contructorWalkingSpeed = 2147483647 / 20;
+		int testJourneyTimeExpectedSpeed = contructorWalkingSpeed * 20;
 		
+		JourneyPlannerA jpA = new JourneyPlannerA(contructorWalkingSpeed);
+		jpA.setOrigin(0, 0);
+		jpA.setDestination(10, 10);
+		assertEquals(testJourneyTimeExpectedSpeed, jpA.journeyTime());
+	}
+	
+	@Test
+	public void jpBTestWalkingVerySlowMaxIntTwentySquare() throws Exception{
+		int contructorWalkingSpeed = 2147483647 / 20;
+		int testJourneyTimeExpectedSpeed = contructorWalkingSpeed * 20;
+		
+		JourneyPlannerB jpB = new JourneyPlannerB(contructorWalkingSpeed);
+		jpB.setOrigin(0, 0);
+		jpB.setDestination(10, 10);
+		assertEquals(testJourneyTimeExpectedSpeed, jpB.journeyTime());
+	}
+	
+	@Test
+	public void jpATestWalkingVerySlowMaxInt() throws Exception{
+		@SuppressWarnings("unused")
+		JourneyPlannerA jpA = new JourneyPlannerA(2147483647);
+	}
+	
+	@Test
+	public void jpBTestWalkingVerySlowMaxInt() throws Exception{
+		@SuppressWarnings("unused")
+		JourneyPlannerB jpB = new JourneyPlannerB(2147483647);
+	}
+			
 	@Test
 	public void jpATestFiveDistance() throws Exception {
 		JourneyPlannerA jpA = new JourneyPlannerA(1);
