@@ -55,7 +55,7 @@ public class JourneyPlannerB {
 	}
 
 	public boolean setOrigin(int X, int Y) {
-		if (0 <= X && X < 10 && 0 <= Y && Y < 10) {
+		if (0 <= X && X <= 10 && 0 <= Y && Y <= 10) {
 			originX = X; originY = Y;
 			return true;
 		} else
